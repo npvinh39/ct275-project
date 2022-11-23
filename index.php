@@ -12,10 +12,10 @@ $tours = $tour->all();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giới Thiệu Địa Điểm Du Lịch Việt Nam</title>
-  <link rel="shortcut icon" href="./public/client/images/logo-locationtour-favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./lib/bootstrap.min.css">
-  <link rel="stylesheet" href="./lib/fontawesome-free-6.1.1-web/css/all.min.css">
-  <link rel="stylesheet" href="./public/client/css/main.css">
+  <link rel="shortcut icon" href="<?= BASE_URL_PATH ?>./public/client/images/logo-locationtour-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="<?= BASE_URL_PATH ?>./lib/bootstrap.min.css">
+  <link rel="stylesheet" href="<?= BASE_URL_PATH ?>./lib/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="<?= BASE_URL_PATH ?>./public/client/css/main.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet"/>
 
   <script type="text/javascript" src="./lib/bootstrap.bundle.min.js"></script>

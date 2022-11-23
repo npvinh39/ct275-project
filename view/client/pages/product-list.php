@@ -16,12 +16,12 @@ $categorys = $category->all();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../../../lib//bootstrap.min.css">
-  <link rel="stylesheet" href="../../../lib//fontawesome-free-6.1.1-web/css/all.min.css">
-  <link rel="stylesheet" href="../../../public/client/css/product-list.css">
-  <link rel="stylesheet" href="../../../public/client/css/main.css">
-  <script type="text/javascript" src="../../../lib//bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="../../../lib//jquery.min.js"></script>
+  <link rel="stylesheet" href="<?= BASE_URL_PATH ?>./lib//bootstrap.min.css">
+  <link rel="stylesheet" href="<?= BASE_URL_PATH ?>./lib//fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="<?= BASE_URL_PATH ?>./public/client/css/product-list.css">
+  <link rel="stylesheet" href="<?= BASE_URL_PATH ?>./public/client/css/main.css">
+  <script type="text/javascript" src="<?= BASE_URL_PATH ?>./lib//bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="<?= BASE_URL_PATH ?>./lib//jquery.min.js"></script>
 </head>
 <body>
   <div class="app">

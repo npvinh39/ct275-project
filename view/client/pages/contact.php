@@ -1,3 +1,6 @@
+<?php
+include "../../../model/bootstrap.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

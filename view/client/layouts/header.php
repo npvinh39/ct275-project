@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light navbar-expand-md navigation-clean-search">
   <div class="container">
-    <a class="navbar-brand" href="http://ct275-project.localhost/">
+    <a class="navbar-brand" href="<?= BASE_URL_PATH ?>">
       <img src="https://res.cloudinary.com/dh5rezmk7/image/upload/v1669187745/CT275-project/logo-locationtour_o3x1gx.png" class="logo" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navcol-1" aria-controls="navcol-1" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,9 +9,9 @@
       <div class="collapse navbar-collapse justify-content-between" id="navcol-1">
         <div class="none"></div>
           <ul class="nav navbar-nav">
-              <li class="nav-item" role="presentation"><a class="nav-link" href="./view/client/pages/product-list.php">Địa điểm</a></li>
-              <li class="nav-item" role="presentation"><a class="nav-link" href="./view/client/pages/contact.php">Liên hệ</a></li>
-              <li class="nav-item" role="presentation"><a class="nav-link" href="./view/client/pages/faq.php">FAQ</a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="<?= BASE_URL_PATH ?>./view/client/pages/product-list.php">Địa điểm</a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="<?= BASE_URL_PATH ?>./view/client/pages/contact.php">Liên hệ</a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="<?= BASE_URL_PATH ?>./view/client/pages/faq.php">FAQ</a></li>
               <!-- <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Services</a>
                   <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Logo design</a><a class="dropdown-item" role="presentation" href="#">Banner design</a><a class="dropdown-item" role="presentation" href="#">content writing</a></div>
               </li> -->
