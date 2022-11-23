@@ -1,9 +1,9 @@
 <?php
 include "../../../model/bootstrap.php";
 
-use CT275\Project\Tour;
-$tour = new Tour($PDO);
-$tours = $tour->all();
+use CT275\Project\FAQ;
+$faq = new FAQ($PDO);
+$faqs = $faq->all();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,17 +29,17 @@ $tours = $tour->all();
     <hr/>
 <h2  class="text-center">FAQ</h2>
 <hr/>
-<?php foreach($tours as $tour_faq): ?>
+<?php foreach($faqs as $faq): ?>
     <div class="accordion" id="accordionExample">
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <p><?=htmlspecialchars($tour_faq->faq_question)?></p>
+            <p><?=htmlspecialchars($faq->faq_question)?></p>
             </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <p><?=htmlspecialchars($tour_faq->faq_answer)?></p>
+                <p><?=htmlspecialchars($faq->faq_answer)?></p>
             </div>
         </div>
     </div>
