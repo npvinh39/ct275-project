@@ -4,6 +4,10 @@ include "../../../model/bootstrap.php";
 use CT275\Project\Tour;
 $tour = new Tour($PDO);
 $tours = $tour->all();
+
+use CT275\Project\Category;
+$category = new Category($PDO);
+$categorys = $category->all();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,15 +35,15 @@ $tours = $tour->all();
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb" style="margin-bottom: 0;">
             <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Trang chủ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>
+            <li class="breadcrumb-item active" aria-current="page">Tất Cả Địa Điểm</li>
           </ol>
         </nav>
       </div>
       <div class="card-body">
-        <div class="filter">
+        <!-- <div class="filter">
           <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="false" aria-controls="mobile-filter">Filters<span class="fa fa-filter pl-1"></span></button>
-      </div>
-      <div id="mobile-filter">
+      </div> -->
+      <!-- <div id="mobile-filter">
           <div>
               <h6 class="p-1 border-bottom">Home Furniture</h6>
               <ul>
@@ -82,20 +86,18 @@ $tours = $tour->all();
                   </div>
               </form>
           </div>
-      </div>
+      </div> -->
 
-      <!-- <section id="sidebar">
+      <section id="sidebar">
           <div>
-              <h6 class="p-1 border-bottom">Loại Tour</h6>
+              <h6 class="p-1 mt-3 border-bottom">Danh Mục</h6>
               <ul>
-                  <li><a href="#">Tour Du xuân 1 ngày</a></li>
-                  <li><a href="#">Tour tham quan</a></li>
-                  <li><a href="#">Tour giá rẻ</a></li>
-                  <li><a href="#">Tour cao cấp</a></li>
-
+                <?php foreach($categorys as $category): ?>
+                  <li><a href="<?=BASE_URL_PATH . './view/client/pages/product-list.php?id=' . $category->getId()?>"><?=htmlspecialchars($category->category_name)?></a></li>
+                <?php endforeach ?>
               </ul>
           </div>
-          <div>
+          <!-- <div>
               <h6 class="p-1 border-bottom">Filter By</h6>
               <p class="mb-2">Color</p>
               <ul class="list-group">
@@ -126,8 +128,8 @@ $tours = $tour->all();
                       <label for="notugly" class="pl-1 pt-sm-0 pt-1">Not Ugly</label>
                   </div>
               </form>
-          </div>
-      </section> -->
+          </div> -->
+      </section>
 
       <section id="products">
           <div class="container row">

@@ -37,7 +37,7 @@ redirect(BASE_URL_PATH);
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb" style="margin-bottom: 0;">
             <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Trang chủ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>
+            <li class="breadcrumb-item active" aria-current="page"><?= htmlspecialchars($tour->tour_name) ?></li>
           </ol>
         </nav>
       </div>
