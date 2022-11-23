@@ -1,3 +1,10 @@
+<?php
+include "../../../model/bootstrap.php";
+
+use CT275\Project\Tour;
+$tour = new Tour($PDO);
+$tours = $tour->all();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +83,8 @@
               </form>
           </div>
       </div>
-      <section id="sidebar">
+
+      <!-- <section id="sidebar">
           <div>
               <h6 class="p-1 border-bottom">Loại Tour</h6>
               <ul>
@@ -87,7 +95,7 @@
 
               </ul>
           </div>
-          <!-- <div>
+          <div>
               <h6 class="p-1 border-bottom">Filter By</h6>
               <p class="mb-2">Color</p>
               <ul class="list-group">
@@ -118,99 +126,36 @@
                       <label for="notugly" class="pl-1 pt-sm-0 pt-1">Not Ugly</label>
                   </div>
               </form>
-          </div> -->
-      </section>
-      <section id="products">
-      <div class="container">
-          <div class="row">
-
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-              <div class="d-flex justify-content-center">
-                <figure class="card card-product-grid card-lg" style="height: 400px; margin-top: 20px;"> <a href="./descripsion.html" class="img-wrap" data-abc="true"><img class="d-block w-100" src="../../../public/client/images/tour1.jpg"></a>
-                    <figcaption class="info-wrap">
-                        <div class="row">
-                            <div class="col-md-12"> <a href="./descripsion.html" class="title" data-abc="true">Toshiba Laptop with 500GB HDD</a> </div>
-                            <!-- <div class="col-md-3">
-                                <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                            </div> -->
-                        </div>
-                    </figcaption>
-                    <div class="bottom-wrap d-flex justify-content-between">
-                      <div class="price-wrap">
-                        <span class="price h5">$999</span> <br>
-                        <small class="text-success">Free shipping</small>
-                      </div>
-                      <a href="./descripsion.html" class="btn btn-primary btn-product" role="button" data-bs-toggle="button">Đặt ngay</a>
-                    </div>
-                </figure>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-              <div class="d-flex justify-content-center">
-                <figure class="card card-product-grid card-lg" style="height: 400px; margin-top: 20px;"> <a href="./descripsion.html" class="img-wrap" data-abc="true"><img class="d-block w-100" src="../../../public/client/images/tour1.jpg"></a>
-                    <figcaption class="info-wrap">
-                        <div class="row">
-                            <div class="col-md-12"> <a href="./descripsion.html" class="title" data-abc="true">Toshiba Laptop with 500GB HDD</a> </div>
-                            <!-- <div class="col-md-3">
-                                <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                            </div> -->
-                        </div>
-                    </figcaption>
-                    <div class="bottom-wrap d-flex justify-content-between">
-                      <div class="price-wrap">
-                        <span class="price h5">$999</span> <br>
-                        <small class="text-success">Free shipping</small>
-                      </div>
-                      <a href="./descripsion.html" class="btn btn-primary btn-product" role="button" data-bs-toggle="button">Đặt ngay</a>
-                    </div>
-                </figure>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-              <div class="d-flex justify-content-center">
-                <figure class="card card-product-grid card-lg" style="height: 400px; margin-top: 20px;"> <a href="./descripsion.html" class="img-wrap" data-abc="true"><img class="d-block w-100" src="../../../public/client/images/tour1.jpg"></a>
-                    <figcaption class="info-wrap">
-                        <div class="row">
-                            <div class="col-md-12"> <a href="./descripsion.html" class="title" data-abc="true">Toshiba Laptop with 500GB HDD</a> </div>
-                            <!-- <div class="col-md-3">
-                                <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                            </div> -->
-                        </div>
-                    </figcaption>
-                    <div class="bottom-wrap d-flex justify-content-between">
-                      <div class="price-wrap">
-                        <span class="price h5">$999</span> <br>
-                        <small class="text-success">Free shipping</small>
-                      </div>
-                      <a href="./descripsion.html" class="btn btn-primary btn-product" role="button" data-bs-toggle="button">Đặt ngay</a>
-                    </div>
-                </figure>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-              <div class="d-flex justify-content-center">
-                <figure class="card card-product-grid card-lg" style="height: 400px; margin-top: 20px;"> <a href="./descripsion.html" class="img-wrap" data-abc="true"><img class="d-block w-100" src="../../../public/client/images/tour1.jpg"></a>
-                    <figcaption class="info-wrap">
-                        <div class="row">
-                            <div class="col-md-12"> <a href="./descripsion.html" class="title" data-abc="true">Toshiba Laptop with 500GB HDD</a> </div>
-                            <!-- <div class="col-md-3">
-                                <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                            </div> -->
-                        </div>
-                    </figcaption>
-                    <div class="bottom-wrap d-flex justify-content-between">
-                      <div class="price-wrap">
-                        <span class="price h5">$999</span> <br>
-                        <small class="text-success">Free shipping</small>
-                      </div>
-                      <a href="./descripsion.html" class="btn btn-primary btn-product" role="button" data-bs-toggle="button">Đặt ngay</a>
-                    </div>
-                </figure>
-              </div>
-            </div>
           </div>
-      </div>
+      </section> -->
+
+      <section id="products">
+          <div class="container row">
+            <?php foreach($tours as $tour): ?>
+              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex justify-content-center">
+                  <figure class="card card-product-grid card-lg"> <a href="<?=BASE_URL_PATH . './view/client/pages/description.php?id=' . $tour->getId()?>" class="img-wrap" data-abc="true"><img class="d-block w-100" src="<?=htmlspecialchars($tour->tour_image)?>"></a>
+                      <figcaption class="info-wrap">
+                          <div class="row">
+                              <div class="col-md-12"> <a href="#" class="title fw-bold h5 text-center" data-abc="true"><?=htmlspecialchars($tour->tour_name)?></a> </div>
+                              <!-- <div class="col-md-3">
+                                  <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                              </div> -->
+                          </div>
+                      </figcaption>
+                      <div class="bottom-wrap d-flex justify-content-between">
+                        <div class="wrap-title pe-1">
+                          <span class="text-secondary product-title"><?=htmlspecialchars($tour->tour_title)?></span> <br>
+                        </div>
+                        <a href="<?=BASE_URL_PATH . './view/client/pages/description.php?id=' . $tour->getId()?>" class="btn btn-primary btn-product" role="button">Xem Thêm</a>
+                      </div>
+                  </figure>
+                </div>
+              </div>
+            <?php endforeach ?>
+          </div>
       </section>
+
       </div>
     </div>
   </div>
