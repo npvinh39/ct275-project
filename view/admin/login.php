@@ -4,7 +4,7 @@
                             <head>
                                 <meta charset='utf-8'>
                                 <meta name='viewport' content='width=device-width, initial-scale=1'>
-                                <title>Snippet - BBBootstrap</title>
+                                <title>Đăng Nhập</title>
                                 <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' rel='stylesheet'>
                                 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
                                 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
@@ -37,49 +37,11 @@
                         <div class="login_topimg">
                         </div>
                         <div class="wrap-login100">
-                        <?php
 
-                            define('TITLE', 'Login');
+                            <?php
+                                    include './layouts/form-login.php';
+                            ?>
 
-                            $loggedin = false;
-                            $error = false;
-
-                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-                                if (!empty($_POST['username']) && !empty($_POST['password'])) {
-
-                                    if ( (strtolower($_POST['username']) == 'me@example.com') && ($_POST['password'] == 'testpass') ) {
-                                        $_SESSION['user'] = 'eWWtD(Iv9$Mw^CQXevjmCmwAAzTIS*t5ykV^wZ5brat5+V4M6b';
-                                        $loggedin = true;
-                                    } else {
-                                        $error = 'Địa chỉ username và mật khẩu không khớp!';
-                                    }
-
-                                } else {
-                                    $error = 'Hãy đảm bảo rằng bạn cung cấp đầy đủ địa chỉ username và mật khẩu!';
-                                }
-
-                            }
-
-                            if ($error) {
-                                echo '<p class="error">' . $error . '</p>';
-                            }
-
-                            if ($loggedin) {
-                                include '../../model/library.php';
-                                redirect('index.php');
-                                echo '<p>Bạn đã đăng nhập!</p>';
-                            } else {
-                                include './layouts/form-login.php';
-                                // echo '<h2>Login Form</h2>
-                                // <form action="login.php" method="post">
-                                // <p><label>Địa chỉ username <input type="username" name="username"></label></p>
-                                // <p><label>Mật khẩu <input type="password" name="password"></label></p>
-                                // <p><input type="submit" name="submit" value="Đăng nhập!"></p>
-                                // </form>';
-                            }
-
-                        ?>
                         </div>
                     </div>
                 </div>

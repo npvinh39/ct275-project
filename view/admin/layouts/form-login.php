@@ -1,4 +1,4 @@
-<form class="login100-form validate-form"  method="post" action="login.php">
+<form class="login100-form validate-form"  method="POST" action="../../../controller/handleLogin.php">
   <span class="login100-form-title "> Đăng Nhập</span>
   <span class="login100-form-subtitle m-b-16"> Sử dụng tài khoản của bạn </span>
   <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz"> <input class="input100" type="text" name="username" placeholder="Tài Khoản"> <span class="focus-input100"></span> <span class="symbol-input100"> <span class="glyphicon glyphicon-user"></span> </span> </div>

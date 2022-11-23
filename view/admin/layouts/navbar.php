@@ -12,7 +12,7 @@
 
 			<!-- Branding Image -->
 			<a class="navbar-brand" href="<?= BASE_URL_PATH ?>">
-				Contacts
+				Trang Chủ
 			</a>
 		</div>
 
@@ -25,8 +25,13 @@
 			<!-- Right Side Of Navbar -->
 			<ul class="nav navbar-nav navbar-right">
 				<!-- Authentication Links -->
-				<li><a href="#">Login</a></li>
-				<li><a href="#">Register</a></li>
+
+
+				<?php
+				if (isset($_SESSION['user'])){ ?>
+				<li><a href="#">Xin Chào, <?php echo $_SESSION['user']; ?></a></li>
+				<li><a href="<?= BASE_URL_PATH ?>./controller/handleLogout.php">Đăng Xuất</a></li>
+				<?php }?>
 			</ul>
 		</div>
 	</div>

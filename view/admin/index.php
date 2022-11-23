@@ -2,12 +2,11 @@
 ob_start();
 include "../../model/bootstrap.php";
 include "../../controller/functions.php";
-
-if (is_administrator()) {
+session_start();
+if (!is_administrator()) {
 	// Nếu không là quản trị viên, hiển thị trang đăng nhập.
-	echo '<p>Khong la admin</p>';
-  // header('Location: login.php');
-	// exit();
+  header('Location: login.php');
+	exit();
 }
 
 use CT275\Project\Tour;
@@ -24,7 +23,7 @@ $tours = $tour->all();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Contacts</title>
+	<title>Trang Quản Lý</title>
 
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -45,6 +44,7 @@ $tours = $tour->all();
 </head>
 
 <body>
+
 	<?php include('./layouts/navbar.php') ?>
 
 	<!-- Main Page Content -->
