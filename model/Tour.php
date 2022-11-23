@@ -22,6 +22,82 @@ class Tour
 		return $this->tour_id;
 	}
 
+	public function getValidationErrors()
+	{
+		return $this->errors;
+	}
+
+	public function validate()
+	{
+		if (!$this->tour_name) {
+			$this->errors['tour_name'] = 'Invalid name.';
+		}
+
+		if ($this->category_id) {
+			$this->errors['category_id'] = 'Invalid category_id.';
+		}
+
+		if ($this->tour_titles) {
+			$this->errors['tour_title'] = 'Invalid tour_titles.';
+		}
+
+		if ($this->tour_description) {
+			$this->errors['tour_description'] = 'Invalid tour_description.';
+		}
+
+		if ($this->tour_map) {
+			$this->errors['tour_map'] = 'Invalid tour_map.';
+		}
+
+		if ($this->tour_image) {
+			$this->errors['tour_image'] = 'Invalid tour_image.';
+		}
+		// if (strlen($this->phone) < 10 || strlen($this->phone) > 11) {
+		// 	$this->errors['phone'] = 'Invalid phone number.';
+		// }
+
+		// if (strlen($this->notes) > 255) {
+		// 	$this->errors['notes'] = 'Notes must be at most 255 characters.';
+		// }
+
+		return empty($this->errors);
+	}
+
+	public function save()
+	{
+	$result = false;
+	if ($this->id >= 0) {
+	$stmt = $this->db->prepare('update tour set tour_name = :tour_name,
+	category_id = :category_id, tour_title = :tour_title, tour_description = :tour_description, tour_map = :tour_map, tour_image = :tour_image, updated_at = now()
+	where tour_id = :id');
+	$result = $stmt->execute([
+	'tour_name' => $this->tour_name,
+	'category_id' => $this->category_id,
+	'tour_title' => $this->tour_title,
+	'tour_description' => $this->tour_description,
+	'tour_map' => $this->tour_map,
+	'tour_image' => $this->tour_image,
+
+	'id' => $this->tour_id]);
+	} else {
+	$stmt = $this->db->prepare(
+	'insert into tour (tour_name, category_id, tour_title, tour_description, tour_map, tour_image, created_at, updated_at)
+	values (:tour_name, :category_id, :tour_title, :tour_description, :tour_map, :tour_image, now(), now())');
+	$result = $stmt->execute([
+		'tour_name' => $this->tour_name,
+		'category_id' => $this->category_id,
+		'tour_title' => $this->tour_title,
+		'tour_description' => $this->tour_description,
+		'tour_map' => $this->tour_map,
+		'tour_image' => $this->tour_image
+	]);
+	if ($result) {
+	$this->id = $this->db->lastInsertId();
+	}
+	}
+	return $result;
+	}
+
 	public function __construct($pdo)
 	{
 		$this->db = $pdo;
@@ -29,8 +105,8 @@ class Tour
 
 	public function fill(array $data)
 	{
-		if (isset($data['name'])) {
-			$this->tour_name = trim($data['name']);
+		if (isset($data['tour_name'])) {
+			$this->tour_name = trim($data['tour_name']);
 		}
   }
 public function all()
@@ -70,5 +146,12 @@ public function all()
     }
     return null;
   }
+
+	public function delete()
+	{
+	$stmt = $this->db->prepare('delete from tour where tour_id = :tour_id');
+	return $stmt->execute(['tour_id' => $this->tour_id]);
+	}
+
 }
 

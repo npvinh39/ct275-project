@@ -28,9 +28,9 @@ $tours = $tour->all();
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link href="//cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
-	<link href="<?= BASE_URL_PATH . "css/sticky-footer.css" ?>" rel=" stylesheet">
-	<link href="<?= BASE_URL_PATH . "css/font-awesome.min.css" ?>" rel=" stylesheet">
-	<link href="<?= BASE_URL_PATH . "css/animate.css" ?>" rel=" stylesheet">
+	<link href="<?= BASE_URL_PATH . "public/admin/css/sticky-footer.css" ?>" rel=" stylesheet">
+	<link href="<?= BASE_URL_PATH . "public/admin/css/font-awesome.min.css" ?>" rel=" stylesheet">
+	<link href="<?= BASE_URL_PATH . "public/admin/css/animate.css" ?>" rel=" stylesheet">
 	<style>
 		.edit-text-2-line {
 			line-height: 2.2rem;
@@ -61,8 +61,8 @@ $tours = $tour->all();
 			<div class="inner-wrapper row">
 				<div class="col-md-12">
 
-					<a href="<?= BASE_URL_PATH . 'add.php' ?>" class="btn btn-primary" style="margin-bottom: 30px;">
-						<i class="fa fa-plus"></i> New Contact</a>
+					<a href="<?= BASE_URL_PATH . 'view/admin/add.php' ?>" class="btn btn-primary" style="margin-bottom: 30px;">
+						<i class="fa fa-plus"></i> Thêm Địa Điểm</a>
 
 					<!-- Table Starts Here -->
 					<table id="contacts" class="table table-bordered table-responsive table-striped">
@@ -89,16 +89,16 @@ $tours = $tour->all();
 									<td class="edit-text-2-line"><?=date("d-m-Y", strtotime($tour->created_at))?></td>
 									<td class="edit-text-2-line"><?=date("d-m-Y", strtotime($tour->updated_at))?></td>
 									<td class="edit-text-2-line">
-										<a href="<?=BASE_URL_PATH . 'edit.php?id=' . $tour->getId()?>"
+										<a href="<?=BASE_URL_PATH . 'view/admin/edit.php?id=' . $tour->getId()?>"
 										class="btn btn-xs btn-warning">
-										<i alt="Edit" class="fa fa-pencil"> Edit</i></a>
-										<form class="delete" action="<?=BASE_URL_PATH . 'delete.php'?>"
+										<i alt="Edit" class="fa fa-pencil"> Sửa</i></a>
+										<form class="delete" action="<?=BASE_URL_PATH . 'view/admin/delete.php'?>"
 										method="POST" style="display: inline;">
 											<input type="hidden" name="id"
 											value="<?=$tour->getId()?>">
 											<button type="submit" class="btn btn-xs btn-danger"
 											name="delete-contact">
-											<i alt="Delete" class="fa fa-trash"> Delete</i></button>
+											<i alt="Delete" class="fa fa-trash"> Xóa</i></button>
 										</form>
 
 									</td>
@@ -119,14 +119,14 @@ $tours = $tour->all();
 				<div class="modal-header">
 				<button type="button" class="close"
 				data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Confirmation</h4>
+				<h4 class="modal-title">Xác Nhận</h4>
 				</div>
-				<div class="modal-body">Do you want to delete this contact?</div>
+				<div class="modal-body">Bạn có thực sự muốn xóa địa điểm này?</div>
 				<div class="modal-footer">
 				<button type="button" data-dismiss="modal"
-				class="btn btn-danger" id="delete">Delete</button>
+				class="btn btn-danger" id="delete">Xóa</button>
 				<button type="button" data-dismiss="modal"
-				class="btn btn-default">Cancel</button>
+				class="btn btn-default">Đóng</button>
 				</div>
 			</div>
 		</div>
@@ -138,7 +138,7 @@ $tours = $tour->all();
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 	<script src="//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-	<script src="<?= BASE_URL_PATH . "js/wow.min.js" ?>"></script>
+	<script src="<?= BASE_URL_PATH . "public/admin/js/wow.min.js" ?>"></script>
 	<script>
 		$(document).ready(function() {
 			new WOW().init();
@@ -150,7 +150,7 @@ $tours = $tour->all();
 			const nameTd = $(this).closest('tr').find('td:first');
 			if (nameTd.length > 0) {
 			$('.modal-body').html(
-			`Do you want to delete "${nameTd.text()}"?`
+			`Bạn có muốn xóa "${nameTd.text()}" không?`
 			);
 			}
 			$('#delete-confirm').modal({

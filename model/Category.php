@@ -6,7 +6,7 @@ class Category
 {
 	private $db;
 
-	private $category_id = -1;
+	public $category_id = -1;
 	public $category_name;
 	public $created_at;
 	public $updated_at;
