@@ -1,6 +1,3 @@
-<?php
-include "../../../model/bootstrap.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +26,7 @@ include "../../../model/bootstrap.php";
                   <span class="line2"></span>
                   <span class="line3"></span>
                   <div class="contact-us">
-                      <p>Contact Us</p>
+                      <p>locationtour@gamil.com.vn</p>
                       <span></span>
                   </div>
                   <div class="social">
@@ -41,42 +38,25 @@ include "../../../model/bootstrap.php";
               </div>
               <div class="right-side">
                   <div class="top-div">
-                      <h2>Get in touch !</h2>
-                      <p>Contact us for a quote,help or to join the team. </p>
+                      <h2>Liên Hệ Chúng Tôi !!!</h2>
+                      <p>contact liên hệ nè</p>
                   </div>
                   <div class="stats">
                       <div class="stats1">
                           <i class="fa fa-map-marker"></i>
-                          <span>102 Street<br>2714 DONNZY</span>
+                          <span>Khu 2, Đ. 3/2, P. Xuân Khánh, Q. Ninh Kiều, Tp. Cần Thơ</span>
                       </div>
                       <div class="stats1">
                           <i class="fa fa-phone"></i>
-                          <span>+02 1203 153</span>
+                          <span>+84292 3832 663</span>
                       </div>
                       <div class="stats1">
                           <i class="fa fa-envelope"></i>
-                          <span>contact@us.fr</span>
+                          <span>locationtour@gamil.com.vn</span>
                       </div>
                   </div>
                   <div class="card-content">
-                      <span>
-                          <div class="input-text">
-                              <input type="text" required="required">
-                              <small>Name</small>
-                          </div>
-                           <div class="input-text">
-                              <input type="text" required="required">
-                              <small>E-mail</small>
-                          </div>
-                          <div class="textarea">
-                              <textarea required="required"></textarea>
-                              <small>Message</small>
-                          </div>
-
-                      </span>
-                  </div>
-                  <div class="buttons">
-                      <button>SEND</button>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8414543437266!2d105.76842661428219!3d10.029938975271234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBD4bqnbiBUaMah!5e0!3m2!1svi!2s!4v1669195819590!5m2!1svi!2s" width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </div>
               </div>
           </div>

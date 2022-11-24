@@ -33,23 +33,20 @@ class Tour
 			$this->errors['tour_name'] = 'Invalid name.';
 		}
 
-		if ($this->category_id) {
-			$this->errors['category_id'] = 'Invalid category_id.';
-		}
 
-		if ($this->tour_titles) {
+		if (!$this->tour_title) {
 			$this->errors['tour_title'] = 'Invalid tour_titles.';
 		}
 
-		if ($this->tour_description) {
+		if (!$this->tour_description) {
 			$this->errors['tour_description'] = 'Invalid tour_description.';
 		}
 
-		if ($this->tour_map) {
+		if (!$this->tour_map) {
 			$this->errors['tour_map'] = 'Invalid tour_map.';
 		}
 
-		if ($this->tour_image) {
+		if (!$this->tour_image) {
 			$this->errors['tour_image'] = 'Invalid tour_image.';
 		}
 		// if (strlen($this->phone) < 10 || strlen($this->phone) > 11) {
@@ -66,10 +63,10 @@ class Tour
 	public function save()
 	{
 	$result = false;
-	if ($this->id >= 0) {
+	if ($this->tour_id >= 0) {
 	$stmt = $this->db->prepare('update tour set tour_name = :tour_name,
 	category_id = :category_id, tour_title = :tour_title, tour_description = :tour_description, tour_map = :tour_map, tour_image = :tour_image, updated_at = now()
-	where tour_id = :id');
+	where tour_id = :tour_id');
 	$result = $stmt->execute([
 	'tour_name' => $this->tour_name,
 	'category_id' => $this->category_id,
@@ -78,7 +75,7 @@ class Tour
 	'tour_map' => $this->tour_map,
 	'tour_image' => $this->tour_image,
 
-	'id' => $this->tour_id]);
+	'tour_id' => $this->tour_id]);
 	} else {
 	$stmt = $this->db->prepare(
 	'insert into tour (tour_name, category_id, tour_title, tour_description, tour_map, tour_image, created_at, updated_at)
@@ -108,7 +105,17 @@ class Tour
 		if (isset($data['tour_name'])) {
 			$this->tour_name = trim($data['tour_name']);
 		}
+
+
+
+		if (isset($data['tour_tile'])) {
+			$this->tour_tile = trim($data['tour_tile']);
+		}
+
+
+		return $this;
   }
+
 public function all()
   {
     $tours = [];
@@ -136,6 +143,7 @@ public function all()
 	] = $row;
 	return $this;
 	}
+
   public function find($tour_id)
   {
     $stmt = $this->db->prepare('select * from tour where tour_id = :tour_id');
@@ -146,6 +154,15 @@ public function all()
     }
     return null;
   }
+
+  	public function update(array $data)
+	{
+	$this->fill($data);
+	if ($this->validate()) {
+	return $this->save();
+	}
+	return false;
+	}
 
 	public function delete()
 	{

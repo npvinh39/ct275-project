@@ -20,6 +20,10 @@ redirect(BASE_URL_PATH);
 $errors = $tour->getValidationErrors();
 }
 
+use CT275\Project\Category;
+$category = new Category($PDO);
+$categorys = $category->all();
+
 
 ?>
 <!DOCTYPE html>
@@ -78,7 +82,7 @@ $errors = $tour->getValidationErrors();
 								<label for="category">Category</label>
 								<select name="category_id" id="category">
 									<?php foreach ($categorys as $category) : ?>
-										<option value="<?= isset($_POST['category_id']) ? htmlspecialchars($_POST['category_id']) : '' ?><?= $category->category_id ?>"><?= htmlspecialchars($category->category_name) ?></option>
+										<option value="<?= isset($_POST['category_id']) ? htmlspecialchars($_POST['category_id']) : '' ?><?= $category->category_id ?>"><?= $category->category_name ?></option>
 									<?php endforeach ?>
 								</select>
 								<?php if (isset($errors['category_id'])) : ?>
