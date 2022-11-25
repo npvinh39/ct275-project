@@ -85,10 +85,10 @@ $tours = $tour->all();
 									<td class="edit-text-2-line"><?=htmlspecialchars($tour->tour_title)?></td>
 									<td class="edit-text-2-line"><?=htmlspecialchars($tour->tour_description)?></td>
 									<td class="edit-text-2-line"><?=htmlspecialchars($tour->tour_map)?></td>
-									<td class="edit-text-2-line"><?=htmlspecialchars($tour->tour_image)?></td>
+									<td class="edit-text-2-line" style="text-align: center;"><img src="<?=htmlspecialchars($tour->tour_image)?>" alt="image" style="width: 50px; height: 50px; border-radius: 50%;"></td>
 									<td class="edit-text-2-line"><?=date("d-m-Y", strtotime($tour->created_at))?></td>
 									<td class="edit-text-2-line"><?=date("d-m-Y", strtotime($tour->updated_at))?></td>
-									<td class="edit-text-2-line">
+									<td class="edit-text-2-line" style="text-align: center;">
 										<a href="<?=BASE_URL_PATH . 'view/admin/edit.php?id=' . $tour->getId()?>"
 										class="btn btn-xs btn-warning">
 										<i alt="Edit" class="fa fa-pencil"> Sửa</i></a>
