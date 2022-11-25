@@ -29,7 +29,7 @@ if ($error) {
 
 if ($loggedin) {
     include '../model/library.php';
-    redirect('../view/admin/index.php');
+    redirect('../view/admin/admin.php');
     echo '<p>Bạn đã đăng nhập!</p>';
 } else {
     include './layouts/form-login.php';

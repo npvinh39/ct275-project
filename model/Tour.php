@@ -9,13 +9,16 @@ class Tour
 	private $tour_id = -1;
 	public $category_id;
 	public $tour_name;
-	public $tour_titles;
+	public $tour_title;
 	public $tour_description;
 	public $tour_map;
 	public $tour_image;
 	public $created_at;
 	public $updated_at;
 	private $errors = [];
+
+
+
 
 	public function getId()
 	{
@@ -34,21 +37,21 @@ class Tour
 		}
 
 
-		if (!$this->tour_title) {
-			$this->errors['tour_title'] = 'Invalid tour_titles.';
-		}
+		// if (!$this->tour_title) {
+		// 	$this->errors['tour_title'] = 'Invalid tour_title.';
+		// }
 
-		if (!$this->tour_description) {
-			$this->errors['tour_description'] = 'Invalid tour_description.';
-		}
+		// if (!$this->tour_description) {
+		// 	$this->errors['tour_description'] = 'Invalid tour_description.';
+		// }
 
-		if (!$this->tour_map) {
-			$this->errors['tour_map'] = 'Invalid tour_map.';
-		}
+		// if (!$this->tour_map) {
+		// 	$this->errors['tour_map'] = 'Invalid tour_map.';
+		// }
 
-		if (!$this->tour_image) {
-			$this->errors['tour_image'] = 'Invalid tour_image.';
-		}
+		// if (!$this->tour_image) {
+		// 	$this->errors['tour_image'] = 'Invalid tour_image.';
+		// }
 		// if (strlen($this->phone) < 10 || strlen($this->phone) > 11) {
 		// 	$this->errors['phone'] = 'Invalid phone number.';
 		// }
@@ -114,7 +117,7 @@ class Tour
 
 
 		return $this;
-  }
+  	}
 
 public function all()
   {
