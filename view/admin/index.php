@@ -65,7 +65,7 @@ $tours = $tour->all();
 						<i class="fa fa-plus"></i> Thêm Địa Điểm</a>
 
 					<!-- Table Starts Here -->
-					<table id="contacts" class="table table-bordered table-responsive table-striped">
+					<table id="tours" class="table table-bordered table-responsive table-striped">
 						<thead>
 							<tr>
 								<th>Name</th>
@@ -97,7 +97,7 @@ $tours = $tour->all();
 											<input type="hidden" name="id"
 											value="<?=$tour->getId()?>">
 											<button type="submit" class="btn btn-xs btn-danger"
-											name="delete-contact">
+											name="delete-tour">
 											<i alt="Delete" class="fa fa-trash"> Xóa</i></button>
 										</form>
 
@@ -142,9 +142,9 @@ $tours = $tour->all();
 	<script>
 		$(document).ready(function() {
 			new WOW().init();
-			$('#contacts').DataTable();
+			$('#tours').DataTable();
 
-			$('button[name="delete-contact"]').on('click', function(e){
+			$('button[name="delete-tour"]').on('click', function(e){
 			e.preventDefault();
 			const form = $(this).closest('form');
 			const nameTd = $(this).closest('tr').find('td:first');

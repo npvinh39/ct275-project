@@ -72,12 +72,15 @@ class Category
 	'category_id' => $this->category_id]);
 	} else {
 	$stmt = $this->db->prepare(
-	'insert into tour_category (category_name, now(), now())');
+	// 'insert into tour_category (category_name, now(), now())');
+	'insert into tour_category (category_name, created_at, updated_at)
+	values (:category_name, now(), now())');
 	$result = $stmt->execute([
-		'category_name' => $this->category_name
+		'category_name' => $this->category_name,
+
 	]);
 	if ($result) {
-	$this->id = $this->db->lastInsertId();
+	$this->category_id = $this->db->lastInsertId();
 	}
 	}
 	return $result;

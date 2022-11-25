@@ -106,7 +106,7 @@ $categorys = $category->all();
 				data-dismiss="modal">&times;</button>
 				<h4 class="modal-title">Xác Nhận</h4>
 				</div>
-				<div class="modal-body">Bạn có thực sự muốn xóa địa điểm này?</div>
+				<div class="modal-body">Bạn có thực sự muốn xóa danh muc này?</div>
 				<div class="modal-footer">
 				<button type="button" data-dismiss="modal"
 				class="btn btn-danger" id="delete">Xóa</button>

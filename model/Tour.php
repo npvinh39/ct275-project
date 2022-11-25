@@ -84,6 +84,7 @@ class Tour
 	'insert into tour (tour_name, category_id, tour_title, tour_description, tour_map, tour_image, created_at, updated_at)
 	values (:tour_name, :category_id, :tour_title, :tour_description, :tour_map, :tour_image, now(), now())');
 	$result = $stmt->execute([
+
 		'tour_name' => $this->tour_name,
 		'category_id' => $this->category_id,
 		'tour_title' => $this->tour_title,
@@ -92,7 +93,7 @@ class Tour
 		'tour_image' => $this->tour_image
 	]);
 	if ($result) {
-	$this->id = $this->db->lastInsertId();
+	$this->tour_id = $this->db->lastInsertId();
 	}
 	}
 	return $result;

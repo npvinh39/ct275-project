@@ -9,4 +9,4 @@
   ) {
   $category->delete();
   }
-  redirect(BASE_URL_PATH);
+  // redirect(BASE_URL_PATH);
